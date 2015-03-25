@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+<aop:aspectj-autoproxy/>
+
+<bean id="fileService" class="edu.sjsu.cmpe275.lab1.FileService">
+    <constructor-arg type="java.lang.String" value="Alice"/>
+    <constructor-arg type="java.lang.String" value=".//src//main//resources//home//Alice//shared//alicetext1.txt"/>      
+ </bean>
+ 
+ <bean id="fileService1" class="edu.sjsu.cmpe275.lab1.FileService">
+    <constructor-arg type="java.lang.String" value="Carl"/>
+    <constructor-arg type="java.lang.String" value=".//src//main//resources//home//Carl//shared//carltext1.txt"/>      
+ </bean>
+  <bean id="fileService2" class="edu.sjsu.cmpe275.lab1.FileService">
+    <constructor-arg type="java.lang.String" value="Alice"/>
+    <constructor-arg type="java.lang.String" value=".//src//main//resources//home//Alice//shared//file2.txt"/>      
+ </bean>
+
+<bean id="logging" class="edu.sjsu.cmpe275.lab1.AspectLogging"/>
+
+<bean id="accessControl" class="edu.sjsu.cmpe275.lab1.AspectAccessControl"/>
+
+</beans>
